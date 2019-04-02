@@ -25,4 +25,15 @@ class Person(models.Model):
                            choices=dict,
                            default='M')
     birth_date = models.DateTimeField('BirthDate')
+    phoneNumber = models.CharField(max_length=12)
+
+    class Meta:
+        abstract = True
+
+
+class Client(Person):
     results = models.ManyToManyField(Result)
+
+
+class Doctor(Person):
+    clients = models.ManyToManyField(Client)
