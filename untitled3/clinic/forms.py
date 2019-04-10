@@ -1,9 +1,10 @@
 from django.db import models
 from django import forms
-from clinic.models import Person, Result
+from clinic.models import  Result,UserProfile
 
 
 class NameForm(forms.ModelForm):
     class Meta:
-        model = Person
-        fields = ['name', 'lastName ', 'birth_date']
+        model = UserProfile
+        fields = ['name', 'lastName', 'birth_date', 'middle_name', 'gender',
+                  'phone_number', 'birth_date']

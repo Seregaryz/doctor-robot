@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.db import models
 
 # Create your models here.
@@ -6,9 +7,6 @@ from django.utils import timezone
 from django.db import models
 
 
-class Result(models.Model):
-    title = models.CharField(max_length=50)
-
 
 dict = (
     ('M', 'Man'),
@@ -16,24 +14,26 @@ dict = (
 )
 
 
-class Person(models.Model):
-    name = models.CharField(max_length=200)
-    lastName = models.CharField(max_length=200)
-    middleName = models.CharField(max_length=200)
-
-    sex = models.CharField(max_length=1,
+class UserProfile(models.Model):
+    user = models.OneToOneField(User,on_delete=models.CASCADE,
+        primary_key=True)
+    middle_name = models.CharField(max_length=200)
+    gender = models.CharField(max_length=1,
                            choices=dict,
                            default='M')
     birth_date = models.DateTimeField('BirthDate')
-    phoneNumber = models.CharField(max_length=12)
+    phone_number = models.CharField(max_length=12)
 
-    class Meta:
-        abstract = True
+    def is_member(self,gr):
+        return self.groups.filter(name=gr).exists()
+class DoctorUser(models.Model):
+    doctor = models.ForeignKey(UserProfile, null=True, blank=True, on_delete=models.CASCADE, verbose_name='Доктор', related_name="rates_from",default="")
+    patient = models.ForeignKey(UserProfile, null=True, blank=True, on_delete=models.CASCADE, verbose_name='Пациент', related_name="rates_to", default="")
+
+class Result(models.Model):
+    Res = models.IntegerField()
+    Patient = models.OneToOneField(UserProfile,on_delete=models.CASCADE,
+        primary_key=True)
 
 
-class Client(Person):
-    results = models.ManyToManyField(Result)
 
-
-class Doctor(Person):
-    clients = models.ManyToManyField(Client)

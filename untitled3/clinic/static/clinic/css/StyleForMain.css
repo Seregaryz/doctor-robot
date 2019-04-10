@@ -1,0 +1,72 @@
+.mx-10 {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.mt-7 {
+    margin-top: 7%;
+}
+
+.outline-none:active {
+    outline: none;
+}
+
+.px-10 {
+    padding-right: 20%;
+    padding-left: 20%;
+}
+
+.border-black {
+    border-color: #1b1e21;
+}
+
+.font-20px {
+    font-size: 20px;
+}
+
+.width-250px {
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.font-18px {
+    font-size: 18px;
+}
+
+.font-16px {
+    font-size: 16px;
+}
+
+.font-30px {
+    font-size: 30px;
+}
+
+.border-radius-0 {
+    border-radius: 0px;
+}
+
+.height-sp {
+    height: 92%;
+
+}
+
+.width-15 {
+    width: 15%;
+}
+
+.ml-40 {
+    margin-left: 40%;
+}
+
+.mt-7 {
+    margin-top: 7%;
+}
+
+.w-400px {
+    width: 400px;
+}
+
+.h-100vh {
+    min-height: 100vh;
+
+}

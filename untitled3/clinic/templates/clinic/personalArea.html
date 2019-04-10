@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>Личный кабинет</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="{% static 'clinic//css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'clinic/css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'clinic/css/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" href="{% static 'clinic/css/StyleForMain.css' %}">
+    <link href="{% static 'clinic/img/favicon.ico' %}" rel="shortcut icon" type="image/x-icon"/>
+   <script src="{% static 'clinic/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'clinic/js/bootstrap.js' %}"></script>
+</head>
+<body style="background-color: rgba(238,240,254,0.91)">
+
+<!--Навигационное меню сверху-->
+<nav class="navbar navbar-expand-sm navbar-dark justify-content-end border-dark border-bottom"
+     style="background-color: #004085">
+
+    <!--Название сайта -->
+    <a class="navbar-brand text-white">Doctor Robot</a>
+
+    <!--Область для имени пользователя-->
+    <button class="btn ml-auto mr-5 text-white">{{ for_header }}</button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--навигационные кнопки-->
+    <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+        <ul class="navbar-nav text-right">
+            <li class="nav-item active">
+                <a class="nav-link btn disabled text-secondary" href="#" data-display="static" aria-haspopup="true"
+                   aria-expanded="false">Личный Кабинет</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link btn" href="#" data-display="static" aria-haspopup="true" aria-expanded="false">Пройти
+                    опрос</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link btn" href="#" data-display="static" aria-haspopup="true" aria-expanded="false">Записаться
+                    к врачу</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link btn" href="main.html" data-display="static" aria-haspopup="true"
+                   aria-expanded="false">Выйти</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!--меню слева-->
+<nav id="sidebar" class="w-25 h-100vh d-inline-block" style="background-color: #004085">
+    <div class="sidebar-header py-2">
+        <h5 class="text-white text-center">Меню</h5>
+    </div>
+
+    <ul class="list-unstyled components">
+        <li class="active py-2 px-3 border-dark border-bottom border-top" style="background-color: #0056b3">
+            <a class="text-white text-center text-decoration-none" href="#menu1">Анкета</a>
+        </li>
+        <li class="py-2 px-3 border-dark border-bottom" style="background-color: #0056b3">
+            <a class="text-white text-center text-decoration-none" href="">Результаты</a>
+        </li>
+    </ul>
+</nav>
+
+<!--Одна из вкладок для меню слева-->
+<div id="menu1" class="w-75 float-right">
+    <div class="col-md pt-5">
+        <h4 class="text-center">Анкета</h4>
+    </div>
+    <div class="col-md mt-5 font-18px">
+        <p>Фамилия: {{ last_name }}</p>
+    </div>
+    <div class="col-md mt-4 font-18px">
+        <p>Имя: {{ name }}</p>
+    </div>
+    <div class="col-md mt-4 font-18px">
+        <p>Отчество: {{ middle_name }}</p>
+    </div>
+    <div class="col-md mt-4 font-18px">
+        <p>Пол: {{ gender }}</p>
+    </div>
+    <div class="col-md mt-4 font-18px">
+        <p>Дата рождения: {{ birth_day }}</p>
+    </div>
+    <div class="col-md mt-4 font-18px">
+        <p>Номер телефона: {{ phone_number }}</p>
+    </div>
+</div>
+</body>
+</html>

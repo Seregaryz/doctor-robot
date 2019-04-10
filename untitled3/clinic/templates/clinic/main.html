@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="{% static 'clinic//css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'clinic/css/bootstrap-grid.css' %}">
+    <link rel="stylesheet" href="{% static 'clinic/css/bootstrap-reboot.css' %}">
+    <link rel="stylesheet" href="{% static 'clinic/css/StyleForMain.css' %}">
+    <link href="{% static 'clinic/img/favicon.ico' %}" rel="shortcut icon" type="image/x-icon"/>
+    <script src="{% static 'clinic/js/bootstrap.bundle.js' %}"></script>
+    <script src="{% static 'clinic/js/bootstrap.js' %}"></script>
+    <script src="{% static 'clinic/js/forMain.js' %}"></script>
+</head>
+<body style="background-color: rgba(238,240,254,0.91)">
+
+<!--Навигационное меню сверху-->
+<nav class="navbar navbar-expand-sm navbar-dark justify-content-end" style="background-color: #004085">
+
+    <!--Название сайта -->
+    <a class="navbar-brand text-white">Doctor Robot</a>
+
+    <!--Скрытая на главной странице область для имени пользователя-->
+    <button class="btn btn-success ml-auto invisible"><!--здесь в личном кабинете отображается имя пользователя--></button>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!--код кнопок входа и регистрации-->
+    <div class="collapse navbar-collapse flex-grow-0" id="navbarSupportedContent">
+        <ul class="navbar-nav text-right">
+
+            <!--кнопка войти, по который появляется окно ввода-->
+            <li class="nav-item active">
+                <div class="btn-group">
+                    <button type="button" class="btn dropdown-toggle text-white" data-toggle="dropdown"
+                            data-display="static" aria-haspopup="true" aria-expanded="false">
+                        Войти
+                    </button>
+
+                    <!--всплывающее окно входа-->
+                    <form class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left align-content-center">
+
+                        <!--поле ввода логина-->
+                        <div class="form-group px-lg- px-3 width-250px" style="max-width: 300px">
+                            <label for="exampleDropdownFormEmail2">Логин</label>
+                            <input type="email" class="form-control" id="exampleDropdownFormEmail2"
+                                   placeholder="Введите логин">
+                        </div>
+
+                        <!--поле ввода пароля-->
+                        <div class="form-group px-3">
+                            <label for="exampleDropdownFormPassword2">Пароль</label>
+                            <input type="password" class="form-control" id="exampleDropdownFormPassword2"
+                                   placeholder="Введите пароль">
+                        </div>
+
+                        <div class="form-group px-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                                <label class="form-check-label" for="dropdownCheck2">
+                                    Запомнить меня
+                                </label>
+                            </div>
+                        </div>
+
+                        <!--кнопка, направляющая в личный кабинет-->
+                        <form action="personalArea.html">
+                            <button type="submit" class="btn mx-4 w-75 text-white" style="background-color: rgba(2,56,148,0.91)">Войти</button>
+                        </form>
+                    </form>
+                </div>
+            </li>
+
+            <!--кнопка регистрации, по которой появляется 2 кнопки на выбор-->
+            <li class="nav-item active">
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle text-white" type="button" id="dropdownMenu2"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Зарегистрироваться
+                    </button>
+
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+
+                        <!--кнопка регистрации пациента-->
+                        <form action="registration.html">
+                            <button type="submit" class="dropdown-item" type="button">Как пациент</button>
+                        </form>
+                        <!--кнопка регистрации врача-->
+                        <form action="registrationDoc.html">
+                            <button type="submit" class="dropdown-item" type="button">Как врач</button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+
+<!--описание-->
+<div class="text-left mt-7">
+    <h1 class="mb-4 text-center">Описание проекта</h1>
+    <p class="mx-10">Descripción - uno de los componentes más comunes del discurso monólogo de autor. En un sentido
+        lógico, describir un fenómeno es enumerar sus signos. Ya en la retórica del siglo XVIII, se pueden encontrar
+        ciertos esquemas para construir tales textos: 1 - definición; 2 - entero - partes; 3 - propiedades externas
+        (forma, material); 4 - lugar; 5 - Propiedades internas: funciones, uso.
+        Por supuesto, las descripciones del texto son muy diversas dependiendo de una serie de condiciones. Primero,
+        el objeto de la descripción juega un papel importante: animar - inanimado, retrato, paisaje, evento, etc. En
+        segundo lugar, es muy importante si la descripción es estática, es decir, una que interrumpe el desarrollo
+        del texto, o dinámica, generalmente de volumen pequeño, que no suspende las acciones, sino que se incluye en
+        el evento. Finalmente, el propósito de la descripción, su función y el papel del autor del texto son
+        fundamentalmente significativos.</p>
+</div>
+
+<!--кнопка для прохождения опроса-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <a class="btn btn-primary border-black mx-4 btn-lg px-10 mt-4"
+               style="background-color: rgba(2,56,148,0.91)"
+               href="#" role="button">Пройти опрос</a>
+        </div>
+        <div class="col-sm"></div>
+    </div>
+</div>
+</body>
+</html>

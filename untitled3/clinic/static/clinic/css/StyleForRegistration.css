@@ -1,0 +1,32 @@
+* {
+	margin-bottom: 5px;
+}
+.mt-7 {
+    margin-top: 5%;
+	margin-left: 25%;
+}
+
+.px-10 {
+    padding-right: 20%;
+    padding-left: 20%;
+}
+
+.border-black {
+    border-color: #1b1e21;
+}
+
+.font-20px {
+    font-size: 20px;
+}
+
+#inputInformation{
+	margin-left: 15%;
+}
+
+#textFinish {
+	margin-top: 15%;
+}
+
+
+
+
